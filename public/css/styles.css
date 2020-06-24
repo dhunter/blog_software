@@ -4,6 +4,11 @@
     --third_color: #8f8f8f;
 }
 
+.center_section {
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
 .container_fluid {
     padding-bottom: 4.375rem;
     padding-top: 4.375rem;
@@ -26,6 +31,16 @@
 
 .footer_padding {
 	padding-bottom: 3.75rem;
+}
+
+.local_button {
+    background-color: var(--third_color);
+    border-color: var(--third_color);
+}
+
+.local_button:hover {
+    background-color: var(--first_color);
+    border-color: var(--first_color);
 }
 
 .navbar_brand_local {
@@ -51,4 +66,18 @@
 
 .navbar_nav_local  li a:hover { 
     color: var(--first_color) !important;
+}
+
+body {
+    margin-bottom: 3.75rem;
+}
+
+h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+html {
+    min-height: 100%;
+    position: relative;
 }
