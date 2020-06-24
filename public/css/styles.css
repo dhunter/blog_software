@@ -1,0 +1,54 @@
+:root {
+    --first_color: #1abc9c;
+    --second_color: #ffffff;
+    --third_color: #8f8f8f;
+}
+
+.container_fluid {
+    padding-bottom: 4.375rem;
+    padding-top: 4.375rem;
+}
+
+.footer {
+    background-color: var(--first_color);
+    bottom: 0;
+    position: absolute;
+	text-align: center;
+	height: 3.75rem;
+	width: 100%;
+}
+
+.footer p {
+    color: var(--second_color);
+    font-size: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.footer_padding {
+	padding-bottom: 3.75rem;
+}
+
+.navbar_brand_local {
+    text-transform: uppercase;
+}
+
+.navbar_local {
+    border: 0;
+    border-radius: 0;
+    font-size: 0.75rem;
+    letter-spacing: 0.2rem;
+    margin-bottom: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.navbar_nav_local li a {
+    color: var(--third_color);
+    margin: 0.75rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.navbar_nav_local  li a:hover { 
+    color: var(--first_color) !important;
+}

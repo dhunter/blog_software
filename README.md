@@ -1,0 +1,1 @@
+Blog (software) challenge from @angelabauer's Web Design Udemy class. 
