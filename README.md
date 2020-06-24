@@ -1,1 +1,1 @@
-Blog (software) challenge from @angelabauer's Web Design Udemy class. 
+Node blog software app component.
