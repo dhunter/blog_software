@@ -2,12 +2,12 @@
     <div class="center_section">
         <h1><%= page_h1 %></h1>
         <p><%= starting_content %></p>
-        <% for(var i = 0; i < blog_posts.length; i++) { %>
-            <div class="blog_posts">
-                <h2><%= blog_posts[i].title %></h2>
-                <p><%= blog_posts[i].body %></p>
-            </div>
-        <% } %>
-        <a class="local_button btn btn-primary" href="/compose">Add another Post</a>
+        <div class="blog_posts">
+            <% blog_posts.forEach(function(blog_post) { %>
+                <h2><%= blog_post.title %></h2>
+                <p><%= blog_post.abstract %> ...<a href="/posts/<%= blog_post.title %>">Read more</a></p>
+            <% }); %>
+        </div>
+        <a class="local_button btn btn-primary" href="/compose">Add a Post</a>
     </div>
 <%- include('partials/footer') -%> 

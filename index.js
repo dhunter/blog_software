@@ -2,6 +2,7 @@ const express = require('express');
 const body_parser = require('body-parser');
 const ejs = require('ejs');
 const dotenv = require('dotenv').config();
+const lodash = require('lodash');
 
 const app = express();
 app.set('view engine', 'ejs');
@@ -44,9 +45,46 @@ app.get('/contact', function(req, res) {
     });
 });
 
+app.get('/posts', function(req, res) {
+    res.render('posts', {
+        page_h1: "Posts",
+        starting_content: "",
+        blog_posts: blog_posts
+    });
+});
+
+app.get('/posts/:post_title', function(req, res) {
+    let requested_title = lodash.lowerCase(req.params.post_title);
+    let requested_post = [];
+    let found_posts = 0;
+
+    blog_posts.forEach(function(blog_post) {
+        if (requested_title === lodash.lowerCase(blog_post.title)) {
+            requested_post.push({
+                title: blog_post.title,
+                abstract: blog_post.abstract,
+                body: blog_post.body
+            });
+            found_posts++;
+        };
+    });
+
+    if (found_posts > 0) {
+        res.render('post', {
+            page_h1: "Posts",
+            starting_content: "",
+            blog_posts: requested_post
+        });
+    } else {
+        res.sendStatus(404);
+    };
+
+});
+
 app.post('/compose', function(req, res) {
     blog_posts.push({
         title: req.body.new_entry_title,
+        abstract: req.body.new_entry_body.substring(0,100),
         body: req.body.new_entry_body
     });
     res.redirect('/');
